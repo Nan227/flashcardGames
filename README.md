@@ -18,27 +18,26 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [x] Cards contains images in addition to or in place of text
+- [x] Cards contain images in addition to or in place of text
 - [x] Cards have different visual styles such as color based on their category
-  - [ ] *visual style implemented*
+  - [x] *visual style implemented*
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
-
-## Video Walkthrough
-
-Here's a walkthrough of implemented required features:
+* [x] Add background picture
+## Screenshot
 ![ML flashcard](https://github.com/Nan227/flashcardGames/blob/master/cardgame/src/assets/SharedScreenshot.jpg)
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created =>
-<!-- Recommended tools:-->
+## Video Walkthrough
 ![ML flashcard gif](https://github.com/Nan227/flashcardGames/blob/master/cardgame/src/assets/mlflashcord.gif)
+
+Here's a walkthrough of implemented required features:
+
+The app we use React 
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The buttons still cannot separate them
 
 ## License
 
