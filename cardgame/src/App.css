@@ -60,12 +60,13 @@ h2{
   align-items: center;
   text-align: center;
   display:block;
+  background-color: rgb(183, 244, 189);
   
 }
 
 .btn{
   padding: 20px ;
-  margin: 20px;
+  
   align-items: center;
   background-color: chocolate;
   display: flex;
@@ -74,6 +75,7 @@ h2{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin: 0 10px; 
 
 }
  
@@ -84,4 +86,10 @@ h2{
   position:absolute;
   bottom: 10px;
   width: 100%;
+  padding: 10px;
+  margin: 10px;
 }
+.btn.clicked {
+  background-color: rgb(204, 249, 205); 
+}
+
