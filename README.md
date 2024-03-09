@@ -31,13 +31,10 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented required features:
 ![ML flashcard](https://github.com/Nan227/flashcardGames/blob/master/cardgame/src/assets/SharedScreenshot.jpg)
 
-
-
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
+GIF created =>
+<!-- Recommended tools:-->
 ![ML flashcard gif](https://github.com/Nan227/flashcardGames/blob/master/cardgame/src/assets/mlflashcord.gif)
-
 
 ## Notes
 
