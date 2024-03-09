@@ -33,11 +33,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-The app we use React 
+The app build with React 
 
 ## Notes
 
-The buttons still cannot separate them
+The buttons can not separate them yet!
 
 ## License
 
