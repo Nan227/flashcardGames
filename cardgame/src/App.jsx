@@ -13,9 +13,12 @@ const App = () => {
 
   const nextQuestion = () => {
     if (questionIndex < questions.length - 1) {
-      setQuestionIndex(questionIndex + 1)
-      setShowAnswer(false)
-    }
+      setQuestionIndex(questionIndex + 1);
+    } else {
+      setQuestionIndex(0);
+    } 
+    setShowAnswer(false)
+  
   }
 
   const showAnswerHandler = () => {
@@ -28,19 +31,27 @@ const App = () => {
       <h1> Machine Leaning Flashcard</h1>
       <h2>There are 10 questions. Let's check them out! </h2>
       <div className ="card">
-        <div className ="question"><h3>{questions[questionIndex].question}</h3>
+        <div></div>
+        <div className ="question"><h2>{questions[questionIndex].question}</h2>
+        <div>..................</div>
+
      </div>
+     <div>{showAnswer && (
         <div className = "answer">
-        <p>{questions[questionIndex].answer}</p>
-        
-        <button onClick={showAnswerHandler}>Show Answer</button>
-        <button onClick={nextQuestion}>Next Question</button>
-
+          <p><br></br></p>
+          <p>{questions[questionIndex].answer}</p>
         </div>
-
+      )}
+        </div>
+        <div className="btn-container">
+        <button onClick={showAnswerHandler}>ShowAnswer</button>
+        <button onClick={nextQuestion}>Next Question</button>
+        </div> 
       </div>
     </div>
-  )
-}
+  );
+};
+
+
 
 export default App

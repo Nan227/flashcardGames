@@ -17,7 +17,6 @@ body{
   padding:0;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  background-color: #37f5ac;
   align-items: center;
   justify-content: center;
   background-image: url("./assets/ai.jpg");
@@ -28,7 +27,7 @@ h2{
   text-align: center;
 }
 .app{
-  background: #fff;
+
   width: 90%;
   max-width: 600px;
   margin: 100px auto 0;
@@ -48,6 +47,7 @@ h2{
   height: 400px;
   min-width: 300px;
   max-width: 600px;
+  position: relative;
 }
 .question{
   width: 100%;
@@ -60,21 +60,28 @@ h2{
   align-items: center;
   text-align: center;
   display:block;
-}
-.btn{
-  padding: 10px 5x;
   
-  margin: 20px 5px;
+}
+
+.btn{
+  padding: 20px ;
+  margin: 20px;
   align-items: center;
-  background-color: #d2691e;
+  background-color: chocolate;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  .btn{
-    padding: 10px 20px;
-    margin: 20px 5px;
-    background-color: chocolate;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
  
+.btn-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  bottom: 10px;
+  width: 100%;
 }
