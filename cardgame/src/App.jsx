@@ -4,21 +4,113 @@ import { useState } from 'react';
 const App = () => {
   const [questionIndex, setQuestionIndex] = useState(0)
   const [showAnswer, setShowAnswer] = useState(false)
+  const [selectedOption, setSelectedOption] = useState("");
+
+const handleOptionChange = (e) => {
+  setSelectedOption(e.target.value);
+};
+
 // update 10 questions
   const questions = [
-    {question: 'Question 1:What is machine learning?', answer: 'Answer 1: Machine learning is a subset of artificial intelligence that involves the development of algorithms and models that enable computers to learn from data and make predictions or decisions without being explicitly programmed.'},
-    {question: 'Question 2: Explain the difference between supervised and unsupervised learning.', answer: 'Answer 2 : Supervised learning involves training a model on labeled data, where the correct output is provided, whereas unsupervised learning involves training on unlabeled data and the model finds patterns or structures within the data without explicit guidance.'},
-    { question: 'Question 3: What is overfitting in the context of machine learning?', answer: 'Answer 3 : Overfitting occurs when a model learns the training data too well, capturing noise or random fluctuations in the data rather than the underlying patterns, leading to poor performance on new, unseen data.' }, 
-    { question: 'Question 4: Describe the concept of feature engineering.', answer: 'Answer 4: Feature engineering involves selecting, transforming, and creating features from raw data to improve the performance of machine learning algorithms. It aims to represent the data in a way that facilitates learning and enhances the predictive power of the model.' }, 
-    { question: 'Question 5: What is a neural network and how does it work?', answer: 'Answer 5: A neural network is a computational model inspired by the structure and function of the human brain. It consists of interconnected nodes (neurons) organized in layers. Each neuron receives input, performs a computation, and passes the output to the next layer. Through training, neural networks can learn complex patterns and relationships in data.' }, 
-    { question: 'Question 6: What are the different types of neural network architectures?', answer: 'Answer 6: Some common types of neural network architectures include feedforward neural networks, convolutional neural networks (CNNs), recurrent neural networks (RNNs), and deep neural networks (DNNs).' }, 
-    { question: 'Question 7: Explain the terms precision and recall in the context of classification algorithms.', answer: 'Answer 7: Precision is the ratio of true positive predictions to the total number of positive predictions made by a model, while recall is the ratio of true positive predictions to the total number of actual positive instances in the data.' }, 
-    { question: 'Question 8: What is cross-validation and why is it important in machine learning?', answer: 'Answer 8: Cross-validation is a technique used to assess the performance of a machine learning model by splitting the data into multiple subsets, training the model on some subsets, and evaluating it on the remaining subsets. It helps to estimate the model\'s performance on unseen data and detect overfitting.' }, 
-    { question: 'Question 9: Describe the process of hyperparameter tuning in machine learning.', answer: 'Answer 9: Hyperparameter tuning involves selecting the optimal hyperparameters for a machine learning model to improve its performance. This process often involves techniques such as grid search, random search, or more advanced optimization algorithms.' },
-     { question: 'Question 10: What is clustering, and what are some common clustering algorithms?', answer: 'Answer 10: Clustering is an unsupervised learning technique used to group similar data points together based on their features. Common clustering algorithms include K-means clustering, hierarchical clustering, and DBSCAN (Density-Based Spatial Clustering of Applications with Noise).' }
+    { question: "What is the primary goal of supervised learning?",
+    options: [
+      "A) To classify unlabeled data",
+      "B) To predict output based on input data",
+      "C) To discover patterns in unlabeled data",
+      "D) To optimize system parameters"], 
+      correct_answer : "B) To predict output based on input data"},
+{
+        question: "Which algorithm is commonly used for binary classification tasks?",
+        options: [
+          "A) K-means clustering",
+          "B) Decision trees",
+          "C) Support Vector Machines (SVM)",
+          "D) Apriori algorithm"
+        ],
+        correct_answer: "C) Support Vector Machines (SVM)"
+      },
+      {
+        question: "What does the term 'overfitting' refer to in machine learning?",
+        options: [
+          "A) The model performs well on unseen data",
+          "B) The model fails to capture underlying patterns in the data",
+          "C) The model is too complex and fits the training data too closely",
+          "D) The model is too simple and fails to capture complex patterns"
+        ],
+        correct_answer: "C) The model is too complex and fits the training data too closely"
+      },
+      {
+        question: "Which of the following evaluation metrics is appropriate for a regression problem?",
+        options: [
+          "A) Accuracy",
+          "B) Precision",
+          "C) Mean Squared Error (MSE)",
+          "D) F1-score"
+        ],
+        correct_answer: "C) Mean Squared Error (MSE)"
+      },
+      {
+        question: "What does the term 'feature engineering' involve in machine learning?",
+        options: [
+          "A) Automating the process of feature selection",
+          "B) Manipulating raw data to create new features that improve model performance",
+          "C) Scaling features to a similar range",
+          "D) Removing irrelevant features from the dataset"
+        ],
+        correct_answer: "B) Manipulating raw data to create new features that improve model performance"
+      },
+      {
+        question: "Which technique is used to handle missing data in a dataset?",
+        options: [
+          "A) Removing rows with missing data",
+          "B) Replacing missing values with the median of the feature",
+          "C) Replacing missing values with the mean of the feature",
+          "D) All of the above"
+        ],
+        correct_answer: "D) All of the above"
+      },
+      {
+        question: "Which type of learning algorithm does not require labeled output data during training?",
+        options: [
+          "A) Supervised learning",
+          "B) Unsupervised learning",
+          "C) Semi-supervised learning",
+          "D) Reinforcement learning"
+        ],
+        correct_answer: "B) Unsupervised learning"
+      },
+      {
+        question: "What is the purpose of the activation function in a neural network?",
+        options: [
+          "A) To define the number of layers in the network",
+          "B) To compute the loss function",
+          "C) To introduce non-linearity to the network",
+          "D) To initialize the weights of the network"
+        ],
+        correct_answer: "C) To introduce non-linearity to the network"
+      },
+      {
+        question: "Which algorithm is commonly used for time series forecasting?",
+        options: [
+          "A) K-nearest neighbors (KNN)",
+          "B) Random Forest",
+          "C) Long Short-Term Memory (LSTM)",
+          "D) Principal Component Analysis (PCA)"
+        ],
+        correct_answer: "C) Long Short-Term Memory (LSTM)"
+      },
+      {
+        question: "What is the objective of unsupervised learning?",
+        options: [
+          "A) To predict output based on input data",
+          "B) To discover patterns in unlabeled data",
+          "C) To classify input data into predefined categories",
+          "D) To optimize system parameters"
+        ],
+        correct_answer: "B) To discover patterns in unlabeled data"
+      }
+    ]
      
-  ]
-
   const nextQuestion = () => {
     if (questionIndex < questions.length - 1) {
       setQuestionIndex(questionIndex + 1);
@@ -33,30 +125,77 @@ const App = () => {
     setShowAnswer(true)
     
   }
+  let currentQuetionIndex = 0;
+  let score = 0;
 
+  
+  // shuffle the questions
 
+  const shuffleQuestions = (questions) => {
+    for (let i = questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
+    return questions;
+  }
+
+  function startQuiz() {
+    currentQuetionIndex = 0;
+    score = 0;
+    shuffleQuestions(questions);
+  }
+
+  const howAnswerHandler = () => {
+    if (selectedOption === correct_answer) {
+      alert('Your answer is correct!');
+    } else {
+      alert('Your answer is wrong!');
+    }
+  };
+
+  
+  
   return (
     <div className="App">
       <h1> Machine Leaning Flashcard</h1>
       <h2>There are 10 questions. Let's check them out! </h2>
       <div className ="card">
         <div></div>
-        <div className ="question"><h2>{questions[questionIndex].question}</h2>
-        <div>..................</div>
+        <div className ="question">
+          <h2> {questions[questionIndex].question}</h2>
+          
+          <p>.......................</p><br/>
+          <h3>{
+  questions[questionIndex].options.map((option, index) => (
+    <div key={index}>
+      <input 
+        type="radio" 
+        id={`option-${index}`} 
+        name="option" 
+        value={option} 
+        onChange={handleOptionChange} 
+      />
+      <label htmlFor={`option-${index}`}>{option}</label>
+    </div>
+  ))
+}</h3>
 
-     </div>
-     <div>{showAnswer && (
+     </div> 
+      </div>
+      <div className = "input-container"> 
+      
+      <div>{showAnswer && (
         <div className = "answer">
-          <p><br></br></p>
-          <p>{questions[questionIndex].answer}</p>
+          <p>Correct answer is </p>
+          <p>{questions[questionIndex].correct_answer}</p>
         </div>
       )}
-        </div>
-        <div className="btn-container">
-        <button onClick={showAnswerHandler}>ShowAnswer</button>
+      <div className="btn-container">
+        <button onClick={showAnswerHandler}>Check Answer</button>
         <button onClick={nextQuestion}>Next Question</button>
         </div> 
-      </div>
+        </div>
+    </div>
     </div>
   );
 };
